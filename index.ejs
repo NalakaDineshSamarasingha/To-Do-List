@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="Day">
+            <h2 class="day"><%= Day %></h2>
+        </div>
+        <div class="animate">
+            <div class="container">
+                <div class="title">
+                <h1>Today</h1>
+            </div>
+            <div class="listBox">
+                <form action="/deleteOne" method="post">
+                    <% Data.forEach(function(item) { %>
+                        <div class="ItemBorder">
+                        <label for="checkbox">
+                            <input type="checkbox" name="check" class="checkbox" >
+                            <button type="submit" name="deletebtn" value="<%= item._id %>" class="deleteOneBtn"><i class="material-icons" style="font-size: 15px; color: #f44336 ; ">&#xe872;</i></button>
+                            <p class="ListItem" name="item"><%= item.ItemName %></p>  
+                        </label>
+                        </div>
+                    <% }) %>
+                    </form>
+            </div>
+            <form action="/" method="post">
+                <div class="dolist">
+                    <input type="text" class="input" placeholder="New item" name="new" autocomplete="off">
+                    <button class="submitbtn" type="submit" >+</button>
+                </div>
+            </form>
+            <div class="dayend">
+                <form action="/delete" method="post">
+                    <button class="daybtn" type="submit">Day End!</button>
+                </form>
+                
+            </div>
+            
+        </div>
+
+        </div>
+       
+    </div>
+</body>
+</html>

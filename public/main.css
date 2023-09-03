@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: linear-gradient(
+        to right,
+        white 0%,
+        #80bdd9 50%,                                                                 
+        #80bdd9 50%,
+        white 100%
+    );
+}
+.title h1{
+    color: white;
+    width: fit-content;
+    padding: 1rem 7rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #008CBA;
+    border-radius: 2%;
+}
+.main{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    padding: 1rem;
+    width: fit-content;
+    background-color: #e3e3e3;
+    border-radius: 3%;
+}
+label{
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.6rem;
+    padding-top: 0.6rem;
+    background-color: #e3e3e3;
+    
+}
+.ListItem{
+    padding-left: 1.5rem;
+    font-size: 1.3rem;
+    background-color: #e3e3e3;
+    font-family: 'Open Sans', sans-serif;
+}
+.listBox{
+    padding-top: 1rem;
+    width: fit-content;
+    background-color: #e3e3e3;
+}
+.dolist{
+    margin-top: 0.6rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #e3e3e3;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+}
+.input{
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 18px;
+    background-color: #e3e3e3;
+}
+.submitbtn{
+    padding: 2% 4.5%;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #008CBA;
+    color: white;
+}
+.dayend{
+    background-color: #e3e3e3;
+}
+.daybtn{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    padding: 0.8rem;
+    font-size: 16px;
+}
+form{
+    background-color: #e3e3e3;
+}
+.day{
+    color: white;
+    padding: 1rem 4.6rem;
+    background-color: #008CBA;
+    margin-bottom: 4%;
+    border-radius: 1%;
+}
+input:focus{
+    outline: none;
+}
+.deleteOneBtn{
+    border: none;
+    background-color: #e3e3e3;
+    display: flex;
+    padding-left: 5px;
+}
+.Day{
+    cursor: pointer;
+    animation: movedown 1.5s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+.animate{
+    animation: zoomin 1.5s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+@keyframes movedown{
+    0%{
+        transform: translateY(-100px);
+        visibility: visible;
+    }
+    100%{
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+@keyframes zoomin{
+    0%{
+        transform: scale(0.3);
+        visibility: visible;
+    }
+    100%{
+        transform: scale(1);
+        visibility: visible;
+    }
+}
