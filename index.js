@@ -19,7 +19,7 @@ console.log(Today);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb://127.0.0.1/todolistDB");
+mongoose.connect("mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB");
 
 const Scheme = mongoose.Schema;
 
