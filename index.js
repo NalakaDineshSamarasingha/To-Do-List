@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000
 const Year = new Date().getFullYear();
 const Day = new Date().getDate();
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -19,7 +19,17 @@ console.log(Today);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB");
+//mongoose.connect("mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB");
+const MONGO_URI = "mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB";
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+  }
 
 const Scheme = mongoose.Schema;
 
@@ -54,7 +64,12 @@ app.post("/deleteOne",async (req,res)=>{
     res.redirect("/");
 })
 
-app.listen(port,()=>{
+/*app.listen(port,()=>{
     console.log(`Server running on ${port}`);
+})*/
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
 })
 
