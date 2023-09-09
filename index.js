@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 //mongoose.connect("mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB");
-const MONGO_URI = "mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net//todolistDB";
+const MONGO_URI = "mongodb+srv://nalakadinesh:Dinesh532@cluster0.drpwlh1.mongodb.net/todolistDB";
 const connectDB = async () => {
     try {
       const conn = await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -67,7 +67,9 @@ app.post("/deleteOne",async (req,res)=>{
     res.redirect("/");
 })
 
-
+/*app.listen(port,()=>{
+    console.log(`Server running on ${port}`);
+})*/
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log("listening for requests");
