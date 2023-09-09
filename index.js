@@ -39,21 +39,21 @@ const listScheme = new Scheme({
 
 const Item = mongoose.model("Item" , listScheme);
 
-/*app.get("/", async (req,res)=>{
+app.get("/list", async (req,res)=>{
     const data = await Item.find({});
     res.render(__dirname + "/index.ejs",{Data: data,Day : Today});
-})*/
+})
 app.get("/",(req,res)=>{
     res.render(__dirname+"/Home.ejs");
 })
 
-/*app.post("/",async (req,res)=>{
+app.post("/list",async (req,res)=>{
     const newitem = req.body["new"];
     const item = new Item({ItemName:newitem});
     const insert = [item]
     Item.insertMany(insert );
     res.redirect("/");
-})*/
+})
 
 app.post("/delete", async (req,res)=>{
     await Item.deleteMany();
