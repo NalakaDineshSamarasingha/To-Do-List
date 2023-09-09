@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'vardena', sans-serif;
 }
 body{
     background: linear-gradient(
@@ -125,6 +125,65 @@ input:focus{
     visibility: hidden;
     animation-fill-mode: forwards;
 }
+
+/*Home page*/
+header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: 20px 10%;
+    font-size: 1.8em;
+}
+form{
+    display: inline;
+    flex-direction: row;
+    background-color: rgba(0,140,186,.1);
+}
+ul li{
+    display: inline;
+    padding-left: 10px;
+}
+ul li button{
+    font-size: 1.1rem;
+}
+.logo{
+    display: flex;
+}
+.home button{
+    border: 1px solid #008CBA;
+    border-left: 5px solid #008CBA;
+    width: 75px;
+    padding: 3px 0;
+    border-radius: 5px;
+    background-color: rgba(0,140,186,.1);
+}
+.home button:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+.body-details{
+    text-align: justify;
+    padding-bottom: 15px;
+}
+.body{
+    margin: auto;
+    width: 300px ;
+    border: 1px solid #008CBA;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+
+}
+.body-title{
+    font-size: 2em;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+}
+
 @keyframes movedown{
     0%{
         transform: translateY(-100px);
