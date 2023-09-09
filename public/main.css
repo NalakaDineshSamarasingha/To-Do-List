@@ -149,6 +149,7 @@ ul li button{
 .logo{
     display: flex;
 }
+
 .home button{
     border: 1px solid #008CBA;
     border-left: 5px solid #008CBA;
@@ -156,6 +157,7 @@ ul li button{
     padding: 3px 0;
     border-radius: 5px;
     background-color: rgba(0,140,186,.1);
+    color: black;
 }
 .home button:hover{
     background-color: #008CBA;
@@ -202,5 +204,11 @@ ul li button{
     100%{
         transform: scale(1);
         visibility: visible;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .home-main{
+        margin-top:35%;
     }
 }
