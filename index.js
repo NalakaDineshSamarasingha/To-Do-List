@@ -52,19 +52,19 @@ app.post("/list",async (req,res)=>{
     const item = new Item({ItemName:newitem});
     const insert = [item]
     Item.insertMany(insert );
-    res.redirect("/");
+    res.redirect("/list");
 })
 
 app.post("/delete", async (req,res)=>{
     await Item.deleteMany();
-    res.redirect("/");
+    res.redirect("/list");
 })
 
 app.post("/deleteOne",async (req,res)=>{
     const deleteItem = req.body;
     const id = deleteItem.deletebtn;
     await Item.deleteOne({_id: id});
-    res.redirect("/");
+    res.redirect("/list");
 })
 
 /*app.listen(port,()=>{
