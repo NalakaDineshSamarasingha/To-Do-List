@@ -46,6 +46,9 @@ app.get("/list", async (req,res)=>{
 app.get("/",(req,res)=>{
     res.render(__dirname+"/Home.ejs");
 })
+app.get("/log",(req,res)=>{
+    res.render(__dirname+"/log.ejs");
+})
 
 app.post("/list",async (req,res)=>{
     const newitem = req.body["new"];

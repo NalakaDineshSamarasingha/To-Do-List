@@ -137,7 +137,10 @@ header{
 form{
     display: inline;
     flex-direction: row;
-    background-color: rgba(0,140,186,.1);
+    background-color: #1abc9c;
+}
+.body{
+    background-color: #1abc9c;
 }
 ul li{
     display: inline;
@@ -156,8 +159,11 @@ ul li button{
     width: 75px;
     padding: 3px 0;
     border-radius: 5px;
-    background-color: rgba(0,140,186,.1);
+
     color: black;
+}
+.navbtn{
+    background-color: rgba(0,140,186,.1);
 }
 .home button:hover{
     background-color: #008CBA;
@@ -172,6 +178,7 @@ ul li button{
     margin: auto;
     width: 300px ;
     border: 1px solid #008CBA;
+    border-radius: 5px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -184,7 +191,66 @@ ul li button{
     font-size: 2em;
     padding-bottom: 15px;
     text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
+.btn{
+    margin-top: 10px;
+    text-align: left;
+}
+/*login page*/
+button{
+    border: 1px solid #008CBA;
+    border-left: 5px solid #008CBA;
+    width: 75px;
+    padding: 3px 0;
+    border-radius: 5px;;
+    color: black;
+}
+.log-body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+button:hover{
+    background-color: #008CBA;
+    color: white;
+}
+.logbtn{
+    margin-top: 10px;
+}
+.small-container,label {
+    background-color: #1abc9c;
+    padding: 10px;
+    border-radius: 5px;
+}
+label{
+    line-height: 3px;
+}
+.Log-Title{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.log-p{
+    padding-bottom: 5px;
+}
+#username,#pw{
+    padding: 5px;
+    width: 250px;
+    margin-bottom: 5px;
+}
+.forget{
+    font-size: 12px;
+    margin-top: 8px;
+}
+.forget a{
+    text-decoration: none;
+    color: brown;
+}
+.log-container{
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+
 
 @keyframes movedown{
     0%{
@@ -198,11 +264,11 @@ ul li button{
 }
 @keyframes zoomin{
     0%{
-        transform: scale(0.3);
+        transform: translateX(-1000px);
         visibility: visible;
     }
     100%{
-        transform: scale(1);
+        transform: translateX(0);
         visibility: visible;
     }
 }
