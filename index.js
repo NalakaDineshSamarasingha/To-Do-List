@@ -89,9 +89,25 @@ app.post("/signUp",(req,res)=>{
     User.insertMany(insertuser);
     //res.redirect(__dirname+"/log.ejs");
 })
-app.post("/login",(req,res)=>{
-    
-})
+app.post("/login", async function (req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    try {
+        const findUser = await User.findOne({ username: username });
+
+        if (findUser && findUser.password === password) {
+            const data = await Item.find({});
+            res.render(__dirname + "/index.ejs", { Data: data, Day: Today });
+        } else {
+            res.status(401).send("Invalid username or password");
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 /*app.listen(port,()=>{
     console.log(`Server running on ${port}`);
 })*/
