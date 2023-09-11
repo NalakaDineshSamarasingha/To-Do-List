@@ -36,8 +36,14 @@ const Scheme = mongoose.Schema;
 const listScheme = new Scheme({
     ItemName : String
 })
+const userScheme = new Scheme({
+    name:String,
+    username: String,
+    password: String
+})
 
 const Item = mongoose.model("Item" , listScheme);
+const User = mongoose.model("User",userScheme);
 
 app.get("/list", async (req,res)=>{
     const data = await Item.find({});
@@ -49,6 +55,10 @@ app.get("/",(req,res)=>{
 app.get("/log",(req,res)=>{
     res.render(__dirname+"/log.ejs");
 })
+app.get("/sign",(req,res)=>{
+    res.render(__dirname+"/sign.ejs");
+})
+
 
 app.post("/list",async (req,res)=>{
     const newitem = req.body["new"];
@@ -70,6 +80,18 @@ app.post("/deleteOne",async (req,res)=>{
     res.redirect("/list");
 })
 
+app.post("/signUp",(req,res)=>{
+    const name = req.body.name;
+    const username = req.body.newuser;
+    const password = req.body.newPassword;
+    const user = new User({name:name,username:username,password:password});
+    const insertuser = [user];
+    User.insertMany(insertuser);
+    //res.redirect(__dirname+"/log.ejs");
+})
+app.post("/login",(req,res)=>{
+    
+})
 /*app.listen(port,()=>{
     console.log(`Server running on ${port}`);
 })*/

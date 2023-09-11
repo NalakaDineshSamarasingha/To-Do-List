@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn | ToDoList</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="log-body">
+    <nav>
+        <div class="log-container">
+            <ul>
+                <li>
+                    <form action="/">
+                        <button type="submit">&lt; Back</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="small-container">
+            <form action="/signUp" method="post">
+                <h1 class="Log-Title">ToDoList</h1>
+                <p class="log-p">You don't have an account?</p>
+                <input type="text" name="name" id="name" placeholder="Name"> <br>
+                <input type="text" name="newuser" id="newuser" placeholder="Username"> <br>
+                <input type="password" name="newPassword" id="newPassword" placeholder="Password"><br>
+                <button type="submit" class="logbtn">Sign up</button>
+                <p class="forget"><a href="#">You allready have an acoount?<p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

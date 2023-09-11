@@ -236,7 +236,7 @@ label{
 .log-p{
     padding-bottom: 5px;
 }
-#username,#pw{
+#newuser,#newPassword,#name,#username,#pw{
     padding: 5px;
     width: 250px;
     margin-bottom: 5px;
